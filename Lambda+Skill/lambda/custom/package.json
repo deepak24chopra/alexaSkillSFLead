@@ -1,0 +1,16 @@
+{
+  "name": "box",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ask-sdk": "^2.5.1",
+    "axios": "^0.18.0",
+    "request": "^2.88.0"
+  }
+}

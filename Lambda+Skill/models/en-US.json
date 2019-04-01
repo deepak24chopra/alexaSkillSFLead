@@ -1,0 +1,120 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "greeter",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "HelloWorldIntent",
+          "slots": [],
+          "samples": [
+            "how are you",
+            "hi",
+            "say hi world",
+            "say hi",
+            "hello",
+            "say hello world",
+            "say hello"
+          ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "mostRecentLead",
+          "slots": [],
+          "samples": [
+            "last inserted lead",
+            "most recent lead",
+            "get me the most recent lead."
+          ]
+        },
+        {
+          "name": "convertLead",
+          "slots": [
+            {
+              "name": "leadName",
+              "type": "leadName",
+              "samples": [
+                "sure",
+                "yes"
+              ]
+            }
+          ],
+          "samples": [
+            "convert the lead {leadName}",
+            "convert lead {leadName}"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "name": {
+                "value": "leadName"
+              }
+            }
+          ],
+          "name": "leadName"
+        }
+      ]
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "convertLead",
+          "confirmationRequired": true,
+          "prompts": {
+            "confirmation": "Confirm.Intent.1436007303549"
+          },
+          "slots": [
+            {
+              "name": "leadName",
+              "type": "leadName",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1436007303549.364406849362"
+              }
+            }
+          ]
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Confirm.Intent.1436007303549",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Are you sure you want to convert the lead ?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1436007303549.364406849362",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "are you sure {leadName} about this lead ?"
+          }
+        ]
+      }
+    ]
+  },
+  "version": "19"
+}
